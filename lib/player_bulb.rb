@@ -12,11 +12,9 @@ class PlayerBulb
   attr_accessor :x, :y, :color
   attr_reader :width, :height
 
-  def initialize
+  def initialize(color)
     @width = 20
     @height = 40
-    @colors = [Gosu::Color::WHITE, Gosu::Color::BLUE, Gosu::Color::RED, Gosu::Color::GREEN,
-               Gosu::Color::YELLOW, Gosu::Color::CYAN]
-    @color = @colors.first
+    @color = color
   end
 end
