@@ -3,7 +3,7 @@ require 'player_bulb'
 require 'gosu'
 
 describe 'Player Bulb' do
-  let(:player_bulb) { PlayerBulb.new }
+  let(:player_bulb) { PlayerBulb.new(Gosu::Color::WHITE) }
   it 'initializes with default width as 20' do
     expect(player_bulb.width).to eq(20)
   end
