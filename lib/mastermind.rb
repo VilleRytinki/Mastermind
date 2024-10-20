@@ -28,5 +28,6 @@ class MasterMind < Gosu::Window
 
   def button_down(button)
     close if button == Gosu::KB_ESCAPE
+
   end
 end
