@@ -8,7 +8,9 @@ class MasterMind < Gosu::Window
     self.caption = 'MasterMind The Game'
 
     @background_image = Gosu::Image.new('assets/images/origbig.png')
-    @player_bulb = PlayerBulb.new
+    @colors = [Gosu::Color::WHITE, Gosu::Color::BLUE, Gosu::Color::RED, Gosu::Color::GREEN,
+               Gosu::Color::YELLOW, Gosu::Color::CYAN]
+    @player_bulb = PlayerBulb.new(@colors.first)
   end
 
   def update
