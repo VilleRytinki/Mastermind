@@ -15,6 +15,8 @@ class PlayerBulb
   def initialize
     @width = 20
     @height = 40
-    @color = Gosu::Color::WHITE
+    @colors = [Gosu::Color::WHITE, Gosu::Color::BLUE, Gosu::Color::RED, Gosu::Color::GREEN,
+               Gosu::Color::YELLOW, Gosu::Color::CYAN]
+    @color = @colors.first
   end
 end
