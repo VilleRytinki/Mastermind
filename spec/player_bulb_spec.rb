@@ -15,7 +15,7 @@ describe 'Player Bulb' do
     expect(@player_bulb.height).to eq(40)
   end
   it 'initializes with default color as Gosu White' do
-    expect(@player_bulb.color).to eq(Gosu::Color::WHITE)
+    expect(@player_bulb.color).to eq(@colors.first)
   end
   it 'changes color to the next available option' do
     @player_bulb.switch_color
