@@ -15,7 +15,6 @@ class MasterMind < Gosu::Window
 
   def update
     # main game logic here according to documentation
-    @player_bulb.color = Gosu::Color::GRAY if @bulb_clicked
   end
 
   def draw
@@ -29,6 +28,6 @@ class MasterMind < Gosu::Window
   def button_down(button)
     close if button == Gosu::KB_ESCAPE
 
-    @bulb_clicked = true if button == Gosu::MsLeft && Gosu.distance(mouse_x, mouse_y, @bulb_x, @bulb_y) < (50)
+    @player_bulb.switch_color if button == Gosu::MsLeft && Gosu.distance(mouse_x, mouse_y, @bulb_x, @bulb_y) < (50)
   end
 end
