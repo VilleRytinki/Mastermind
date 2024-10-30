@@ -10,7 +10,7 @@ class MasterMind < Gosu::Window
     @background_image = Gosu::Image.new('assets/images/origbig.png')
     @colors = [Gosu::Color::WHITE, Gosu::Color::BLUE, Gosu::Color::RED, Gosu::Color::GREEN,
                Gosu::Color::YELLOW, Gosu::Color::CYAN]
-    @player_bulb = PlayerBulb.new(@colors.first)
+    @player_bulb = PlayerBulb.new(@colors.first, @colors)
   end
 
   def update
