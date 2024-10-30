@@ -6,7 +6,8 @@ describe 'Player Bulb' do
   before(:example) do
     @colors = [Gosu::Color::WHITE, Gosu::Color::BLUE, Gosu::Color::RED, Gosu::Color::GREEN,
                Gosu::Color::YELLOW, Gosu::Color::CYAN]
-    @player_bulb = PlayerBulb.new(@colors.first, @colors)
+    coordinates = { x: 0, y: 10 }
+    @player_bulb = PlayerBulb.new(@colors.first, @colors, coordinates[:x], coordinates[:y])
   end
   it 'initializes with default width as 20' do
     expect(@player_bulb.width).to eq(20)
@@ -25,5 +26,11 @@ describe 'Player Bulb' do
     @player_bulb.color = @colors.last
     @player_bulb.switch_color
     expect(@player_bulb.color).to eq(@colors.first)
+  end
+  it 'knows its x location' do
+    expect(@player_bulb.x).to eq(0)
+  end
+  it 'knows its y location' do
+    expect(@player_bulb.y).to eq(10)
   end
 end
