@@ -2,7 +2,6 @@
 
 require_relative 'player_bulb'
 require_relative 'code'
-require_relative 'code_container'
 # Main game loop control for mastermind
 class MasterMind < Gosu::Window
   def initialize
@@ -33,12 +32,13 @@ class MasterMind < Gosu::Window
   def button_down(button)
     close if button == Gosu::KB_ESCAPE
 
+    # Need to solve how to check for every bulb
     @player_bulb1.switch_color if button == Gosu::MsLeft && Gosu.distance(mouse_x, mouse_y, @player_bulb1.x,
                                                                           @player_bulb1.y) < (20)
   end
 
   def draw_player_code
-    @player_code_container.code.bulbs.each do |bulb|
+    @code.bulbs.each do |bulb|
       Gosu.draw_rect(bulb.x, bulb.y, bulb.width, bulb.height,
                      bulb.color)
     end
