@@ -32,15 +32,20 @@ class MasterMind < Gosu::Window
   def button_down(button)
     close if button == Gosu::KB_ESCAPE
 
-    # Need to solve how to check for every bulb
-    @player_bulb1.switch_color if button == Gosu::MsLeft && Gosu.distance(mouse_x, mouse_y, @player_bulb1.x,
-                                                                          @player_bulb1.y) < (20)
+    change_bulb_color_if_clicked(button)
   end
 
   def draw_player_code
     @code.bulbs.each do |bulb|
       Gosu.draw_rect(bulb.x, bulb.y, bulb.width, bulb.height,
                      bulb.color)
+    end
+  end
+
+  def change_bulb_color_if_clicked(button)
+    @code.bulbs.each do |bulb|
+      bulb.switch_color if button == Gosu::MsLeft && Gosu.distance(mouse_x, mouse_y, bulb.x,
+                                                                   bulb.y) < (20)
     end
   end
 end
