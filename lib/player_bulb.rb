@@ -13,8 +13,8 @@ class PlayerBulb
   attr_reader :width, :height
 
   def initialize(color, color_options, x_axis, y_axis)
-    @width = 20
-    @height = 40
+    @width = 80
+    @height = 100
     @color = color
     @color_options = color_options
     @x = x_axis
