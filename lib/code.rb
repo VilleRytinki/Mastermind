@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 require_relative 'player_bulb'
+require_relative 'make_guess_button'
 # This class should consist of bulbs which forms a code.
 class Code
-  attr_accessor :bulbs
+  attr_accessor :bulbs, :button
 
   def initialize(bulbs, x_location, y_location)
     @bulbs = bulbs
@@ -22,7 +23,13 @@ class Code
     @bulbs.each do |bulb|
       bulb.x = @x_location + increment_x
       bulb.y = @y_location
-      increment_x += 40
+      increment_x += bulb.width * 2
     end
+  end
+
+  def set_make_guess_button_location
+    x = @x_location + @bulbs[0].width + 20
+    y = @y_location + @bulbs[0].height * 2
+    @button = MakeAGuessButton.new(x, y, @bulbs[0].width * 4, @bulbs[0].height)
   end
 end
